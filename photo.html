@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; background: #111; color: #fff; margin: 0; padding: 20px; }
+        .gallery-title { text-align: center; margin-bottom: 30px; }
+        
+        /* Grid System */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Photo crop nahi hogi, fit rahegi */
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .photo-item img:hover {
+            transform: scale(1.05); /* Hover par halka sa zoom */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-title">
+        <h1>Tapnstream Photography</h1>
+        <p>Capturing the Edge</p>
+    </div>
+
+    <div class="photo-grid">
+        <div class="photo-item"><img src="photo1.jpg" alt="Work 1"></div>
+        <div class="photo-item"><img src="photo2.jpg" alt="Work 2"></div>
+        <div class="photo-item"><img src="photo3.jpg" alt="Work 3"></div>
+        <div class="photo-item"><img src="photo4.jpg" alt="Work 4"></div>
+    </div>
+
+</body>
+</html>

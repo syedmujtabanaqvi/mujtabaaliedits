@@ -1,0 +1,534 @@
+:root {
+    --primary-color: #ff3c00;
+    --primary-gradient: linear-gradient(135deg, #ff3c00, #ff7300);
+    --bg-dark: #070707;
+    --bg-darker: #050505;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 18px 6%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    height: 100vh;
+    background:
+        linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.6), transparent),
+        url('your-hero-image.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== Main Button ===== */
+.btn-main {
+    padding: 15px 45px;
+    background: var(--primary-gradient);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 60, 0, 0.4);
+}
+
+.btn-main:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px rgba(255, 60, 0, 0.6);
+}
+
+/* ===== Section Styling ===== */
+.section-container {
+    padding: 100px 10%;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+/* ===== Posters Grid ===== */
+.posters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.poster-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 2/3;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
+}
+
+.poster-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.poster-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 60, 0, 0.3);
+}
+
+.poster-card:hover img {
+    transform: scale(1.1);
+}
+
+.poster-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 25px;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.poster-card:hover .poster-overlay {
+    opacity: 1;
+}
+
+/* ===== Video Grid ===== */
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.video-item iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    transition: 0.3s ease;
+}
+
+.video-item iframe:hover {
+    transform: scale(1.02);
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 120px 0;
+    background: linear-gradient(to top, #000, #0a0a0a);
+    border-top: 1px solid var(--glass-border);
+}
+
+/* ===== CV Button ===== */
+.cv-btn {
+    background: linear-gradient(135deg, #e50914, #ff3c00);
+    color: #fff;
+    padding: 12px 32px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.cv-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        display: none;
+    }
+}
+
+:root {
+    --primary-color: #00d4ff; /* Neon Cyan/Blue */
+    --accent-color: #0056b3; /* Deep Blue */
+    --bg-dark: #02060c;      /* Deep Midnight Black/Blue */
+    --card-bg: #0a1118;      /* Dark Blue Grey */
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #e0f2f7;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- Blue Cinematic Hero Section --- */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 8%;
+    /* Blue-ish Dark Overlay */
+    background: 
+        linear-gradient(to right, rgba(2, 6, 12, 0.98) 25%, rgba(2, 6, 12, 0.3) 70%),
+        url('your-hero-image.jpg') center/cover no-repeat;
+}
+
+/* Floating Blue Glow Orb */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 750px;
+    padding: 40px;
+    background: rgba(0, 212, 255, 0.03); /* Subtle Blue Tint */
+    backdrop-filter: blur(8px);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0 30px 30px 0;
+    box-shadow: -10px 0 30px rgba(0, 212, 255, 0.05);
+}
+
+.hero h1 { 
+    font-size: clamp(3rem, 10vw, 5rem); 
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    /* Blue to White Gradient Text */
+    background: linear-gradient(to bottom, #fff 50%, var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #a3b8cc;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+/* --- Neon Blue Button --- */
+.btn-main {
+    padding: 18px 45px;
+    background: transparent;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    transition: var(--transition);
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.btn-main:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* --- Responsive Poster Grid --- */
+.posters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.poster-card {
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    transition: var(--transition);
+}
+
+.poster-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 5%;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-content {
+        border-left: none;
+        border-top: 4px solid var(--primary-color);
+        border-radius: 20px;
+        background: rgba(2, 6, 12, 0.8);
+    }
+    .posters-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}:root {
+    --primary-color: #00d4ff; 
+    --bg-dark: #02060c;      
+    --card-bg: #0a1118;      
+    --text-main: #e0f2f7;
+    --glass: rgba(0, 212, 255, 0.05);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Responsive Header --- */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 15px 5%;
+    background: rgba(2, 6, 12, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo { 
+    font-size: 1.4rem; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    color: #fff;
+}
+.logo span { color: var(--primary-color); text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+
+nav ul { display: flex; list-style: none; align-items: center; }
+nav ul li { margin-left: 25px; }
+nav ul li a { 
+    color: #a3b8cc; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+}
+nav ul li a:hover { color: var(--primary-color); }
+
+/* --- Cinematic & Responsive Hero --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background: 
+        linear-gradient(to right, var(--bg-dark) 30%, rgba(2, 6, 12, 0.4) 70%, transparent),
+        url('your-hero-image.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 700px;
+    z-index: 10;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hero h1 { 
+    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 50%, var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #a3b8cc;
+    margin-bottom: 30px;
+}
+
+/* --- Responsive Poster Grid --- */
+.section-container { padding: 60px 10%; max-width: 1400px; margin: 0 auto; }
+
+.posters-grid {
+    display: grid;
+    /* Auto-fit screen size ke mutabiq columns adjust karta hai */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.poster-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.poster-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+/* --- Video Grid (Responsive) --- */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .section-container { padding: 60px 5%; }
+    .hero { padding: 80px 5%; }
+}
+
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Mobile menu typically needs JS, hidden for now */
+    
+    .hero {
+        justify-content: center;
+        text-align: center;
+        background: 
+            linear-gradient(to bottom, rgba(2, 6, 12, 0.8), rgba(2, 6, 12, 0.8)),
+            url('your-hero-image.jpg') center/cover no-repeat;
+    }
+    
+    .hero-content {
+        padding: 30px 20px;
+        background: transparent;
+        border: none;
+        backdrop-filter: none;
+    }
+
+    .posters-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2.2rem; }
+    
+    .posters-grid {
+        grid-template-columns: 1fr 1fr; /* 2 mobile columns */
+        gap: 10px;
+    }
+    
+    .btn-main {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    
+    .section-title { font-size: 1.5rem; }
+}
